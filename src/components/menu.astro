@@ -1,0 +1,14 @@
+---
+import { Image } from "astro:assets";
+import logo from "@/assets/images/logo.png";
+---
+
+<nav class="flex items-center justify-start gap-3 w-full h-12 font-medium text-teal-100 px-8 py-10">
+  <a href="/">
+    <Image src={logo} alt="" width={256} class="w-12" />
+  </a>
+  <a href="/">Home</a>
+  <a href="/#calendar">Calendar</a>
+  <a href="/menus">Menus</a>
+  <a href="/events">Private Events</a>
+</nav>
