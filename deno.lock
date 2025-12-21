@@ -4,6 +4,7 @@
     "npm:@lucide/astro@0.562": "0.562.0_astro@5.16.6__typescript@5.9.3__vite@6.4.1___picomatch@4.0.3__zod@3.25.76_typescript@5.9.3",
     "npm:@tailwindcss/vite@^4.1.18": "4.1.18_vite@6.4.1__picomatch@4.0.3",
     "npm:astro@^5.16.6": "5.16.6_typescript@5.9.3_vite@6.4.1__picomatch@4.0.3_zod@3.25.76",
+    "npm:sharp@~0.34.5": "0.34.5",
     "npm:tailwindcss@^4.1.18": "4.1.18",
     "npm:typescript@^5.9.3": "5.9.3"
   },
@@ -2496,6 +2497,7 @@
         "npm:@lucide/astro@0.562",
         "npm:@tailwindcss/vite@^4.1.18",
         "npm:astro@^5.16.6",
+        "npm:sharp@~0.34.5",
         "npm:tailwindcss@^4.1.18",
         "npm:typescript@^5.9.3"
       ]
