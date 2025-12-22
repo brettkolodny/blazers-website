@@ -1,14 +1,17 @@
 ---
 import { Image } from "astro:assets";
 import logo from "@/assets/images/logo.png";
+
+const path = Astro.originPathname;
+console.log(path);
 ---
 
-<nav class="flex items-center justify-between sm:justify-start gap-3 w-full h-12 font-medium text-teal-100 px-8 py-8 md:py-10">
+<nav class="flex items-center justify-between sm:justify-start gap-3 w-full h-12 font-medium text-teal-100 px-8 py-8 md:py-10 font-poppins">
   <a href="/" class="hidden md:block">
     <Image src={logo} alt="" width={256} class="w-12" />
   </a>
-  <a href="/">Home</a>
-  <a href="/#calendar">Calendar</a>
-  <a href="/menus">Menus</a>
-  <a href="/events">Events</a>
+  <a href="/" class={`hover:text-teal-300 transition-colors ${path === "/" ? "underline" : null}`}>Home</a>
+  <a href="/#calendar" class="hover:text-teal-300 transition-colors">Calendar</a>
+  <a href="/menus" class={`hover:text-teal-300 transition-colors ${path === "/menus/" ? "underline" : null}`}>Menus</a>
+  <a href="/events" class={`hidden hover:text-teal-300 transition-colors ${path === "/events/" ? "underline" : null}`}>Events</a>
 </nav>

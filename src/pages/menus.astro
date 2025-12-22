@@ -1,0 +1,230 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Menu from "@/components/menu.astro";
+import MenuItem from "@/components/menu-item.astro";
+
+const draftBeers = [
+  {
+    name: "Pilsner Paradise",
+    description: "A crisp, golden lager with a light hoppy finish and refreshing citrus notes",
+    price: "6.50"
+  },
+  {
+    name: "Midnight Stout",
+    description: "Rich, dark stout with hints of coffee, chocolate, and roasted malt",
+    price: "7.25"
+  },
+  {
+    name: "Hazy IPA",
+    description: "Juicy New England-style IPA with tropical fruit flavors and low bitterness",
+    price: "7.00"
+  },
+  {
+    name: "Amber Wave",
+    description: "Smooth amber ale with caramel malt sweetness and balanced hop character",
+    price: "6.75"
+  },
+  {
+    name: "Wheat Field",
+    description: "Unfiltered wheat beer with banana and clove notes, light and refreshing",
+    price: "6.25"
+  },
+  {
+    name: "West Coast IPA",
+    description: "Classic IPA with bold pine and grapefruit flavors, crisp and bitter",
+    price: "7.50"
+  },
+  {
+    name: "Porter House",
+    description: "Smooth porter with notes of toffee, nuts, and dark chocolate",
+    price: "7.00"
+  },
+  {
+    name: "Sour Cherry Ale",
+    description: "Tart and fruity sour ale with real cherry puree, refreshingly acidic",
+    price: "8.00"
+  },
+  {
+    name: "Belgian Blonde",
+    description: "Traditional Belgian blonde ale with subtle spice and fruity esters",
+    price: "7.25"
+  },
+  {
+    name: "Session Lager",
+    price: "5.50"
+  }
+];
+
+const cannedBeers = [
+  {
+    name: "Stella Artois",
+    description: "Belgian lager with a crisp, clean taste and subtle hop bitterness",
+    price: "5.50"
+  },
+  {
+    name: "Corona Extra",
+    description: "Mexican pale lager, light and refreshing with a smooth finish",
+    price: "5.00"
+  },
+  {
+    name: "Guinness Draught",
+    description: "Iconic Irish stout with creamy texture and roasted barley flavors",
+    price: "6.00"
+  },
+  {
+    name: "Heineken",
+    description: "Dutch pale lager with a balanced malty sweetness and green bottle heritage",
+    price: "5.25"
+  },
+  {
+    name: "Blue Moon Belgian White",
+    description: "Wheat ale brewed with orange peel and coriander for a citrusy twist",
+    price: "5.75"
+  },
+  {
+    name: "Samuel Adams Boston Lager",
+    description: "American amber lager with rich malt character and spicy hop notes",
+    price: "6.25"
+  },
+  {
+    name: "Modelo Especial",
+    description: "Mexican pilsner-style lager with a well-balanced taste and orange blossom honey",
+    price: "5.00"
+  },
+  {
+    name: "Lagunitas IPA",
+    description: "California IPA packed with citrus and pine hop flavors",
+    price: "6.50"
+  },
+  {
+    name: "Coors Light",
+    price: "4.50"
+  },
+  {
+    name: "Peroni Nastro Azzurro",
+    description: "Italian premium lager with a delicate balance of bitterness and citrus notes",
+    price: "5.75"
+  },
+  {
+    name: "Budweiser",
+    price: "4.75"
+  },
+  {
+    name: "Sapporo Premium",
+    description: "Japanese rice lager with a crisp, clean profile and smooth finish",
+    price: "6.00"
+  }
+];
+
+const cocktails = [
+  {
+    name: "Lavender Sunset",
+    description: "Gin, lavender syrup, fresh lemon juice, and elderflower liqueur topped with prosecco",
+    price: "12.00"
+  },
+  {
+    name: "Smoky Old Fashioned",
+    description: "Mezcal and bourbon blend with agave syrup, orange bitters, and smoked rosemary",
+    price: "14.00"
+  },
+  {
+    name: "Tropical Thunder",
+    description: "Spiced rum, coconut cream, pineapple juice, lime, and passion fruit puree",
+    price: "11.00"
+  },
+  {
+    name: "Cucumber Mint Fizz",
+    description: "Vodka muddled with fresh cucumber and mint, lime juice, simple syrup, and soda water",
+    price: "10.50"
+  },
+  {
+    name: "Blackberry Bramble",
+    description: "Gin shaken with fresh blackberries, lemon juice, and honey, finished with crushed ice",
+    price: "13.00"
+  },
+  {
+    name: "Espresso Martini Royale",
+    description: "Vodka, coffee liqueur, fresh espresso, and a touch of vanilla with salted caramel rim",
+    price: "13.50"
+  },
+  {
+    name: "Blood Orange Margarita",
+    description: "Tequila blanco, fresh blood orange juice, lime, agave nectar, and Cointreau",
+    price: "12.50"
+  },
+  {
+    name: "Ginger Snap",
+    description: "Whiskey, ginger beer, fresh ginger, lime juice, and maple syrup",
+    price: "11.50"
+  },
+  {
+    name: "Garden Party",
+    description: "Vodka infused with fresh basil, muddled strawberries, balsamic reduction, and lemon",
+    price: "12.00"
+  },
+  {
+    name: "Manhattan Noir",
+    description: "Rye whiskey, sweet vermouth, black walnut bitters, and luxardo cherry",
+    price: "14.50"
+  },
+  {
+    name: "Pineapple Jalapeño Punch",
+    description: "Tequila, grilled pineapple, fresh jalapeño, cilantro, lime, and agave",
+    price: "13.00"
+  },
+  {
+    name: "Elderflower Spritz",
+    price: "10.00"
+  }
+];
+---
+
+<Layout>
+  <div class="w-full min-h-dvh bg-teal-800">
+    <Menu />
+    <div class="flex flex-col items-center w-full p-6 md:p-8">
+      <main class="flex flex-col items-center max-w-6xl w-full gap-10">
+        <div class="flex w-full justify-center">
+          <h1 class="font-gasoek text-6xl text-teal-50">Bar & Food Menus</h1>
+        </div>
+        <div class="flex flex-wrap w-full justify-center gap-6">
+          <section class="flex flex-col gap-4 grow bg-violet-200 p-6 rounded">
+            <h2 class="font-gasoek text-3xl text-violet-950">Draft</h2>
+            <div class="flex flex-col gap-3">
+              {draftBeers.map((item) => (
+                <>
+                  <MenuItem {...item} />
+                  <div class="h-px w-full bg-violet-300 last:hidden" />
+                </>
+              ))}
+            </div>
+          </section>
+
+          <section class="flex flex-col gap-4 grow bg-violet-200 p-6 rounded">
+            <h2 class="font-gasoek text-3xl text-violet-950">Bottles and Cans</h2>
+            <div class="flex flex-col gap-3">
+              {cannedBeers.map((item) => (
+                <>
+                  <MenuItem {...item} />
+                  <div class="h-px w-full bg-violet-300 last:hidden" />
+                </>
+              ))}
+            </div>
+          </section>
+
+          <section class="flex flex-col gap-4 bg-violet-200 p-6 rounded shrink">
+            <h2 class="font-gasoek text-3xl text-violet-950">Cocktails</h2>
+            <div class="flex flex-col gap-3">
+              {cocktails.map((item) => (
+                <>
+                  <MenuItem {...item} />
+                  <div class="h-px w-full bg-violet-300 last:hidden" />
+                </>
+              ))}
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+</Layout>

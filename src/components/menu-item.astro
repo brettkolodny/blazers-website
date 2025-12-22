@@ -1,0 +1,20 @@
+---
+type Props = {
+    name: string;
+    description?: string;
+    price: string;
+  };
+
+const { name, description, price } = Astro.props;
+
+const [dollar, cents] = price.split(".");
+---
+<div class="flex justify-between font-poppins w-full gap-6">
+    <div class="flex flex-col">
+        <p class="text-violet-950 text-lg font-medium">{name}</p>
+        <p class="text-violet-950/60 italic w-full max-w-96 text-sm">{description}</p>
+    </div>
+    <p class="text-violet-950">
+        <span class="text-lg md:text-2xl">${dollar}</span>.<span>{cents ?? "00"}</span>
+    </p>
+</div>
