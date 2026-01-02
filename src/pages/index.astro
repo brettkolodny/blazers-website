@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import Menu from "@/components/menu.astro";
 import { MapPin } from "@lucide/astro"
 import { Image } from "astro:assets";
+import homeAvatar from "@/assets/images/home-hero-avatar.webp"
 import homeHero from "@/assets/images/home-hero.jpg"
 ---
 
@@ -10,13 +11,13 @@ import homeHero from "@/assets/images/home-hero.jpg"
 	<div class="bg-teal-800 w-screen min-h-dvh font-poppins h-full">
 		<Menu />
 		<main class="flex flex-col w-full">
-			<section class="w-full flex flex-col gap-4 md:gap-10 px-6 md:px-8 items-center">
+			<section class="w-full flex flex-col gap-4 md:gap-10 items-center">
 				<h1 class="flex flex-col items-center justify-center font-gasoek text-teal-50">
 					<span class="text-5xl md:text-7xl uppercase">Blazers</span>
 					<span class="text-4xl md:text-5xl md:tracking-[3px]">Sports Bar</span>
 				</h1>
 
-				<div class="flex flex-col-reverse md:flex-row gap-3 md:gap-8 w-full flex-1 min-h-0 pt-2 pb-4 md:py-0 md:pb-8 md:max-h-[660px] max-w-5xl">
+				<div class="flex flex-col-reverse md:flex-row gap-3 md:gap-8 w-full flex-1 min-h-0 pt-2 pb-4 md:py-0 md:pb-8 md:max-h-[660px] max-w-5xl px-6 md:pl-8 md:pr-0">
 					<div class="flex flex-col justify-start gap-3 md:max-w-[428px]">
 						<div class="flex flex-col gap-1 md:gap-2">
 							<h2 class="text-teal-50 text-xl md:text-2xl font-bold font-poppins">NYC’s bold, community-first sports bar dedicated to women’s sports.</h2>
@@ -47,8 +48,9 @@ import homeHero from "@/assets/images/home-hero.jpg"
 						</div>
 					</div>
 
-					<div class="flex flex-col flex-1 min-h-0 h-auto">
-						<Image src={homeHero} alt="" class="w-full object-cover max-h-full h-full" />
+					<div class="relative flex flex-col flex-1 min-h-0 h-auto">
+						<Image src={homeAvatar} height={760} alt="" class="absolute top-0 //w-full aspect-auto  object-left object-cover transform -translate-y-26 h-[760px] min-h-[760px] hidden md:block" />
+						<Image src={homeHero} height={760} alt="" class="w-full object-cover md:hidden" />
 					<div>
 				</div>
 			</section>
